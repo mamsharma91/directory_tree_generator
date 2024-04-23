@@ -1,6 +1,5 @@
 import argparse
 import sys
-import os
 import pathlib
 
 
@@ -42,7 +41,7 @@ class _TreeGenerator:
         self._tree = []
 
     def build_tree(self):
-        self._tree.append(f"{self._root_dir}{os.sep}")
+        self._tree.append(f"{self._root_dir}")
         self._tree.append(PIPE)
         self._tree_body(self._root_dir)
         return self._tree
@@ -63,7 +62,7 @@ class _TreeGenerator:
     def _add_directory(
             self, directory, index, entries_count, prefix, connector
     ):
-        self._tree.append(f"{prefix}{connector} {directory.name}{os.sep}")
+        self._tree.append(f"{prefix}{connector} {directory.name}")
         if index != entries_count - 1:
             prefix += PIPE_PREFIX
         else:
