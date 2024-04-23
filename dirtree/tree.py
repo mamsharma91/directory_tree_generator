@@ -10,7 +10,7 @@ def main():
         "root_dir",
         metavar="ROOT_DIR",
         nargs="?",
-        default="./rptree",
+        default="./dirtree",
         help="Generate a full directory tree starting at ROOT_DIR",
     )
     args = parser.parse_args()
